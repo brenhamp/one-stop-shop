@@ -1,5 +1,4 @@
-const sequelize = require('../config/connection');
-const { Product, Department } = require('../models');
+const { Product } = require('../models');
 
 const productData = [
     {
