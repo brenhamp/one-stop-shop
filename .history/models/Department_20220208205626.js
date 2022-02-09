@@ -11,11 +11,6 @@ Department.init (
             primaryKey: true,
             autoIncrement: true
           },
-        department_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+        department_name
     }
 )
-
-module.exports = Department;

@@ -12,10 +12,7 @@ Department.init (
             autoIncrement: true
           },
         department_name: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.
         }
     }
 )
-
-module.exports = Department;

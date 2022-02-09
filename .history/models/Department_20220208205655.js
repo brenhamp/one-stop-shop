@@ -17,5 +17,3 @@ Department.init (
         }
     }
 )
-
-module.exports = Department;
