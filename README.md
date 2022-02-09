@@ -14,4 +14,4 @@ A website to order food from
 
 ## Credits
 
-Made by Forest Mills, Brenham Pozzi, and Mike Bashford
+Made by Forrest Mills, Brenham Pozzi, and Mike Bashford
