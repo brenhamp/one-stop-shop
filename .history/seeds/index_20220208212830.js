@@ -1,0 +1,1 @@
+const seedDepartments = require ('./department-seeds')
