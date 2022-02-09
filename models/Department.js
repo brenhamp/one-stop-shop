@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Department extends Model {}
 
-Department.init (
+Department.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,7 +15,13 @@ Department.init (
             type: DataTypes.STRING,
             allowNull: false
         }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'department'
     }
-)
+),
 
 module.exports = Department;

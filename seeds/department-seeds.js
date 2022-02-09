@@ -1,5 +1,4 @@
-const sequelize = require('../config/connection');
-const { Department } = require ('../models/Department');
+const { Department } = require('../models');
 
 const departmentData = [
     {
