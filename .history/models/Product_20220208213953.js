@@ -15,7 +15,7 @@ Product.init (
               types: DataTypes.STRING,
               allowNull: false
           },
-        product_description: {
+        Product_description: {
             type: DataTypes.STRING,
             allowNull: false
         },
