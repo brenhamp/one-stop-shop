@@ -15,6 +15,10 @@ Cart.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         product_id: {
             type: DataTypes.INTEGER,
             references: {

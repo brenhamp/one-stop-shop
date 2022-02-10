@@ -1,5 +1,6 @@
 const Department = require('./Department');
 const Product = require('./Product');
+const Cart = require('./Cart');
 
 // Product belongsto Department
 Product.belongsTo(Department);
@@ -11,5 +12,6 @@ Department.hasMany(Product, {
 
 module.exports = {
     Department,
-    Product
+    Product,
+    Cart
 };
