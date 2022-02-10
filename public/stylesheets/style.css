@@ -1,3 +1,31 @@
+.carousel-item {
+  height: 32rem;
+  width: 64rem;
+}
+
+.social {
+  text-align: center;
+}
+
+.social-logins {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+.social-logins li {
+  list-style: none;
+}
+
+.social-logins li img {
+  width: 3rem;
+}
+
+.nav-tabs .nav-item {
+  width: 50%;
+  border: 1rem;
+}
+
 @media (min-width: 1024px) {
 }
 
