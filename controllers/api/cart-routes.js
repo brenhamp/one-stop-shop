@@ -3,8 +3,12 @@ const sequelize = require('../../config/connection');
 const { Cart } = require('../../models');
 
 //view all items in cart
-router.get('/', (req, res) => {
-    Cart.findAll()
+router.get('/:user_id', (req, res) => {
+    Cart.findAll({
+        where: {
+            user_id: req.params.user_id
+        }
+    })
     .then(dbCartData => res.json(dbCartData))
     .catch(err => {
         console.log(err);
@@ -13,10 +17,11 @@ router.get('/', (req, res) => {
 });
 
 //view singular item in cart
-router.get('/:id', (req, res) => {
+router.get('/:user_id/:id', (req, res) => {
     Cart.findOne({
         where: {
-            id: req.params.cart_id,
+            user_id: req.params.user_id,
+            id: req.params.id
         },
     })
     .then((dbCartData) => {
@@ -33,8 +38,12 @@ router.get('/:id', (req, res) => {
 });
 
 //add item to cart
-router.post('/', (req, res) => {
-        Cart.create(req.body)
+router.post('/:user_id', (req, res) => {
+        Cart.create(req.body, {
+            where: {
+                user_id: req.params.user_id
+            },
+        })
         .then(dbCartData => res.json(dbCartData))
         .catch((err) => {
             console.log(err);
@@ -43,10 +52,11 @@ router.post('/', (req, res) => {
     });
 
 //modify item in cart
-router.put('/:id', (req, res) => {
+router.put('/:user_id/:id', (req, res) => {
     Cart.update(req.body, {
         where: {
-            id: req.params.cart_id,
+            user_id: req.params.user_id,
+            id: req.params.id
         },
     })
     .then((dbCartData) => {
@@ -59,11 +69,12 @@ router.put('/:id', (req, res) => {
 });
 
 //delete item from cart
-router.delete('/:id', (req, res) => {
+router.delete('/:user_id/:id', (req, res) => {
     Cart.destroy({
         where: {
+            user_id: req.params.user_id,
             id: req.params.id
-        }
+        },
     })
     .then(dbCartData => {
         if (!dbCartData) {

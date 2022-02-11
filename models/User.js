@@ -30,13 +30,13 @@ User.init(
         len: [4],
       },
     },
-    cart_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "cart",
-        key: "cart_id",
-      },
-    },
+    // cart_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "cart",
+    //     key: "cart_id",
+    //   },
+    // },
   },
   {
     hooks: {

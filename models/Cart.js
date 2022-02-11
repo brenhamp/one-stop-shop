@@ -5,7 +5,7 @@ class Cart extends Model {}
 
 Cart.init(
     {
-        cart_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -25,7 +25,14 @@ Cart.init(
                 model: 'product',
                 key: 'id'
             }
-        }  
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'user_id'
+            }
+        }
     },
     {
         sequelize,
