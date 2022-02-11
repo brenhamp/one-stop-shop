@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Cart.findOne({
         where: {
-            id: req.params.id,
+            id: req.params.cart_id,
         },
     })
     .then((dbCartData) => {
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Cart.update(req.body, {
         where: {
-            id: req.params.id,
+            id: req.params.cart_id,
         },
     })
     .then((dbCartData) => {
