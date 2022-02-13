@@ -26,13 +26,13 @@
   border: 1rem;
 }
 
-#signUp {
+/* #signUp {
   display: none;
 }
 
 #logIn {
   display: none;
-}
+} */
 
 @media (min-width: 1024px) {
 }
