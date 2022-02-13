@@ -3,7 +3,9 @@ const { Cart, User } = require('../../models');
 
 //View all users
 router.get("/", (req, res) => {
-    User.findAll()
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
         console.log(err);
@@ -14,6 +16,7 @@ router.get("/", (req, res) => {
 //View a single user and their cart
 router.get("/:id", (req, res) => {
     User.findOne({
+        attributes: { exclude: ['password'] },
         include: [
             {
                 model: Cart,
@@ -58,12 +61,12 @@ router.post('/login', (req, res) => {
                 res.status(400).json({ message: "No user with that email address" });
                 return;
             }
-            // Need to debug code here 
-            // const validPassword = dbUserData.checkPassword(req.body.password);
-            // if(!validPassword) {
-            //     res.status(400).json({ message: 'Incorrect password '});
-            //     return;
-            // }
+           
+            const validPassword = dbUserData.checkPassword(req.body.password);
+            if(!validPassword) {
+                res.status(400).json({ message: 'Incorrect password '});
+                return;
+            }
 
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
