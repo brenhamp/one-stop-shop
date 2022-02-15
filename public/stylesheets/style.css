@@ -26,8 +26,8 @@
   border: 1rem;
 }
 
-/* #signUp {
-  display: none;
+#signUp {
+  display: inline;
 }
 
 #logIn {
