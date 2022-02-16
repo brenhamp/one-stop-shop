@@ -10,7 +10,7 @@ function initalize(passport, getUserByEmail, getUserById) {
         }
 
         try { 
-            if (await.bcrypt.compare(password, user.password)) {
+            if (await bcrypt.compare(password, user.password)) {
                 return done(null, user)
             } else {
                 return done(null, false, { message: 'Password incorrect' })
@@ -21,7 +21,7 @@ function initalize(passport, getUserByEmail, getUserById) {
     }
     passport.use(new LocalStrategy({ usernameField: 'email' }, authoUser))
     passport.serializeUser((user, done) => done(null, user.id))
-    passport.deserializUser((id, done) => {
+    passport.deserializeUser((id, done) => {
        return done(null, getUserById(id))
      })
 }

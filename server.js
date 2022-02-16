@@ -11,7 +11,6 @@ const flash = require('express-flash');
 
 
 const initalizePassport = require('./passport.config');
-const { userInfo } = require('os');
 initalizePassport(
     passport, 
     email => users.find(user => user.email === email),
