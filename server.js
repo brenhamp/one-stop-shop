@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 // importing passport
 const passport = require('passport');
-//
+// importing flash - future goal to display messages to user if entering wrong credentials
 const flash = require('express-flash');
 
 
@@ -31,6 +31,14 @@ const sess = {
     })
 };
 
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+
+    res.resdirect('/login')
+};
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -50,3 +58,5 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
+
+module.exports = checkAuthenticated;

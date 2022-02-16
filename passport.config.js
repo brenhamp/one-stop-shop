@@ -26,4 +26,12 @@ function initalize(passport, getUserByEmail, getUserById) {
      })
 }
 
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+
+    res.resdirect('/login')
+}
+
 module.exports = initalize

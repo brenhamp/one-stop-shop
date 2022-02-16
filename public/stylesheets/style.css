@@ -25,14 +25,14 @@
   width: 50%;
   border: 1rem;
 }
-
+/* 
 #signUp {
   display: inline;
-}
-
-#logIn {
-  display: none;
 } */
+
+/* #logIn {
+  display: none;
+} * */
 
 @media (min-width: 1024px) {
 }

@@ -19,9 +19,15 @@
   </head>
 
   <body>
+
+  {{#if loggedIn}}
+  <a href="/homepage">homepage</a>
+  {{else}}
+  <a href="/login"></a>
+  {{/if}}
+
 {{!-- rendering the homepage below --}}
     {{{body}}}
-
 {{!-- importing bootstrap styling --}}
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -29,8 +35,6 @@
       crossorigin="anonymous"
     ></script>
 {{!-- importing login/logout functions --}}
-    <script src="/javascript/login.js"></script>
-    <script src="/javascript/logout.js"></script>
 
   </body>
 
