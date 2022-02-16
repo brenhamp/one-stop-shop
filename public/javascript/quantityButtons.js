@@ -31,10 +31,7 @@ function decrementItem() {
   }
   quantity.innerHTML = itemCount;
   if (itemCount === 0) {
-    addCartButton.setAttribute(
-      "style",
-      "display:block; justify-content: center;"
-    );
+    addCartButton.setAttribute("style", "display:block;");
     quantityGroup.setAttribute("style", "display:none;");
   }
 }
