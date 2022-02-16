@@ -19,6 +19,13 @@ Product.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        price: {
+            type:DataTypes.DECIMAL(4,2),
+            allowNull: false
+        },
+        img: {
+            type:DataTypes.STRING
+        },
         department_id: {
             type: DataTypes.INTEGER,
             references: {
