@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
         include: [
             {
                 model: Product,
-                attributes: ['id', 'product_name', 'product_description', 'department_id'],
+                attributes: ['id', 'product_name', 'product_description', 'price', 'img', 'department_id'],
             },
         ],
     })
@@ -19,12 +19,12 @@ router.get("/", (req, res) => {
 });
 
 //get one department and its products
-router.get("/:id", (req, res) => {
+router.get("/:department_name", (req, res) => {
     Department.findOne({
         include: [
             {
                 model: Product,
-                attributes: ['id', 'product_name', 'product_description', 'department_id'],
+                attributes: ['id', 'product_name', 'product_description', 'price', 'img', 'department_id'],
             },
         ],
     })

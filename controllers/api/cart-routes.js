@@ -41,7 +41,9 @@ router.get('/:user_id/:id', (req, res) => {
 router.post('/:user_id', (req, res) => {
         Cart.create(req.body, {
             where: {
-                user_id: req.params.user_id
+                user_id: req.params.user_id,
+                id: req.params.id,
+                quantity: req.params.quantity
             },
         })
         .then(dbCartData => res.json(dbCartData))
@@ -51,12 +53,13 @@ router.post('/:user_id', (req, res) => {
         })
     });
 
-//modify item in cart
+//modify number of items in cart
 router.put('/:user_id/:id', (req, res) => {
     Cart.update(req.body, {
         where: {
             user_id: req.params.user_id,
-            id: req.params.id
+            id: req.params.id,
+            quantity: req.params.quantity
         },
     })
     .then((dbCartData) => {
