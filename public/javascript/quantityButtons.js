@@ -1,39 +1,92 @@
-const minusSymbol = document.querySelector("#subtract");
-const addSymbol = document.querySelector("#add");
-const quantity = document.querySelector("#quantity");
-const addCartButton = document.querySelector("#cart");
-const quantityGroup = document.querySelector("#quantityManager");
+const minusSymbol = document.getElementsByClassName("subtract");
+const addSymbol = document.getElementsByClassName("add");
+const quantity = document.getElementsByClassName("quantity");
+const addCartButton = document.getElementsByClassName("cart");
+const quantityGroup = document.getElementsByClassName("btn-group");
 const cartTotal = document.querySelector("#cartTotal");
 const cartItems = document.querySelector("#cartCount");
-var itemCount = 0;
+var cartCount = 0;
 
-quantityGroup.setAttribute("style", "display:none;");
-
-function toggleAddCart() {
-  addCartButton.setAttribute("style", "display:none;");
-  itemCount++;
-  quantity.innerHTML = itemCount;
-  quantityGroup.setAttribute("style", "display:block");
-  updateCartItemCount();
+for (i = 0; i < quantityGroup.length; i++) {
+  quantityGroup[i].setAttribute("style", "display:none;");
+}
+for (i = 0; i < quantity.length; i++) {
+  var itemCount = 0;
+  quantity[i].innerHTML = itemCount;
+}
+function addButtonListeners() {
+  for (i = 0; i < minusSymbol.length; i++) {
+    minusSymbol[i].addEventListener("click", decrementItem);
+  }
+  for (i = 0; i < addSymbol.length; i++) {
+    addSymbol[i].addEventListener("click", incrementItem);
+  }
+  for (i = 0; i < addCartButton.length; i++) {
+    addCartButton[i].addEventListener("click", toggleAddCart);
+  }
 }
 
-function incrementItem() {
+function toggleAddCart(event) {
+  itemCount = 0;
+  var button = event.target;
+  button.setAttribute("style", "display:none;");
+  var display = button.parentElement.parentElement.parentElement;
+  var displayCount = display.getElementsByClassName("quantity");
+  var buttonGroup = display.getElementsByClassName("btn-group");
   itemCount++;
-  quantity.innerHTML = itemCount;
-  if (itemCount === 0) {
-    addCartButton.setAttribute("style", "display:block;");
+  cartCount++;
+  for (i = 0; i < buttonGroup.length; i++) {
+    buttonGroup[i].setAttribute("style", "display:block;");
+  }
+  for (i = 0; i < displayCount.length; i++) {
+    displayCount[i].innerHTML = itemCount;
   }
   updateCartItemCount();
 }
 
-function decrementItem() {
+function incrementItem(event) {
+  var button = event.target;
+  itemCount++;
+  cartCount++;
+  var display = button.parentElement.parentElement.parentElement;
+  var displayCount = display.getElementsByClassName("quantity");
+  var addCart = display.getElementsByClassName("cart");
+
+  if (itemCount === 0) {
+    for (i = 0; i < addCart.length; i++) {
+      addCart[i].setAttribute("style", "display:block;");
+    }
+  }
+  for (i = 0; i < displayCount.length; i++) {
+    displayCount[i].innerHTML = itemCount;
+  }
+  updateCartItemCount();
+}
+
+function decrementItem(event) {
+  var button = event.target;
+  var display = button.parentElement.parentElement.parentElement;
+  var displayCount = display.getElementsByClassName("quantity");
+  var addCart = display.getElementsByClassName("cart");
+  var buttonGroup = display.getElementsByClassName("btn-group");
+
   if (itemCount > 0) {
+    for (i = 0; i < addCart.length; i++) {
+      addCart[i].setAttribute("style", "display:none;");
+    }
     itemCount--;
+    cartCount--;
   }
-  quantity.innerHTML = itemCount;
   if (itemCount === 0) {
-    addCartButton.setAttribute("style", "display:block;");
-    quantityGroup.setAttribute("style", "display:none;");
+    for (i = 0; i < addCart.length; i++) {
+      addCart[i].setAttribute("style", "display:block;");
+    }
+    for (i = 0; i < buttonGroup.length; i++) {
+      buttonGroup[i].setAttribute("style", "display:none;");
+    }
+  }
+  for (i = 0; i < displayCount.length; i++) {
+    displayCount[i].innerHTML = itemCount;
   }
   updateCartItemCount();
 }
@@ -43,12 +96,10 @@ function getItemCount() {
 }
 
 function updateCartItemCount() {
-  var cartItemNum = itemCount;
+  var cartItemNum = cartCount;
   cartItems.innerHTML = cartItemNum;
 }
 
 function updateCartTotal() {}
 
-minusSymbol.addEventListener("click", decrementItem);
-addSymbol.addEventListener("click", incrementItem);
-addCartButton.addEventListener("click", toggleAddCart);
+addButtonListeners();
