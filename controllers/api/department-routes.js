@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 });
 
 //get one department and its products
-router.get("/:department_name", (req, res) => {
+router.get("/produce", (req, res) => {
     Department.findOne({
         include: [
             {
