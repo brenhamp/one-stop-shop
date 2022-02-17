@@ -17,6 +17,7 @@ async function signupFormHandler(e) {
         // adding error handling - checking response
         if (response.ok) {
             console.log('success');
+            document.location.replace('/homepage');
         } else {
             alert(response.statusText)
         }
@@ -41,7 +42,7 @@ async function loginFormHandler(e) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/homepage');
         } else {
             alert(response.statusText);
         }

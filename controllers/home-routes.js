@@ -2,11 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Department, Product } = require("../models");
 
-router.get('/', (req, res) => {
-    res.render('homepage');
-});
   
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/homepage');
+        return;
+    }
     res.render('login');
 });
 

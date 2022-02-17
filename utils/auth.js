@@ -2,7 +2,7 @@
 
 const autho = (req, res, next) => {
     if(!req.session.user_id) {
-        res.redirect('/homepage');
+        res.redirect('/login');
     } else {
         next();
     }

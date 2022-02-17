@@ -6,9 +6,9 @@ async function logout() {
         headers: { 'Content-Type': 'application/json' }
     });
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/login');
     } else {
-        alert(response.statusText);
+        document.location.replace('/login');
     }
 }
 
