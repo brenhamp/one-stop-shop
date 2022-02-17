@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Cart, User } = require('../../models');
 
+
 //View all users
 router.get("/", (req, res) => {
     User.findAll({

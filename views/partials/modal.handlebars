@@ -1,0 +1,78 @@
+<section class="bg-dark text-light text-center">
+  <div class="container h-100">
+    <h2 class="p-5">Sign up for grocery deliver today!</h2>
+    <div class="md-flex justify-content-between align-items-center">
+      <button
+        type="button"
+        class="btn btn-outline-success"
+        data-bs-toggle="modal"
+        data-bs-target="#signUpModal"
+        data-bs-whatever="signUp"
+      >
+        Sign up!
+      </button>
+      <div
+        class="modal fade"
+        id="signUpModal"
+        tabindex="-1"
+        aria-labelledby="signUpModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-body">
+              <ul class="nav nav-tabs mb-3" id="tabs-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                      <a class="nav-link active btn btn-black" id="sign-up-tab" data-bs-toggle="tab" data-bs-target="#sign-up" role="tab" aria-controls="sign-up" aria-selected="true">Sign up</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link btn btn-black" id="log-in-tab" data-bs-toggle="tab" data-bs-target="#log-in" role="tab" aria-controls="tabs-log-in" aria-selected="false">Log in</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="sign-up" role="tabpanel" aria-labelledby="home-tab" ></div>
+                <div class="tab-pane fade" id="log-in" role="tabpanel" aria-labelledby="profile-tab"></div>
+              </div>
+              <div class="class social">
+                <p>with your social network</p>
+                <ul class="social-logins">
+                  <li>
+                    <a href=""><img src="./images/github.svg" alt=""></a>
+                  </li>
+                </ul>
+                <p> or</p>
+              </div>
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="col-form-label">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="col-form-label"
+                    >Password</label
+                  >
+                  <input
+                  type="password"
+                    class="form-control"
+                    id="password"
+                  ></input>
+                </div>
+              </form>
+            </div>
+            </script>
+            <div class="modal-footer" id="signUp">
+              <button type="button" class="btn btn-outline-success " data-bs-dismiss="modal">Sign up</button>
+            </div>
+            <div class="modal-footer" id="logIn">
+              <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Log in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
