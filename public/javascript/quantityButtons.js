@@ -3,6 +3,8 @@ const addSymbol = document.querySelector("#add");
 const quantity = document.querySelector("#quantity");
 const addCartButton = document.querySelector("#cart");
 const quantityGroup = document.querySelector("#quantityManager");
+const cartTotal = document.querySelector("#cartTotal");
+const cartItems = document.querySelector("#cartCount");
 var itemCount = 0;
 
 console.log(itemCount);
@@ -13,6 +15,8 @@ function toggleAddCart() {
   itemCount++;
   quantity.innerHTML = itemCount;
   quantityGroup.setAttribute("style", "display:block");
+  getItemCount();
+  updateCartItemCount();
 }
 
 function incrementItem() {
@@ -22,6 +26,8 @@ function incrementItem() {
   if (itemCount === 0) {
     addCartButton.setAttribute("style", "display:block;");
   }
+  getItemCount();
+  updateCartItemCount();
 }
 
 function decrementItem() {
@@ -34,7 +40,20 @@ function decrementItem() {
     addCartButton.setAttribute("style", "display:block;");
     quantityGroup.setAttribute("style", "display:none;");
   }
+  getItemCount();
+  updateCartItemCount();
 }
+
+function getItemCount() {
+  return itemCount;
+}
+
+function updateCartItemCount() {
+  var cartItemNum = itemCount;
+  cartItems.innerHTML = cartItemNum;
+}
+
+function updateCartTotal() {}
 
 minusSymbol.addEventListener("click", decrementItem);
 addSymbol.addEventListener("click", incrementItem);
