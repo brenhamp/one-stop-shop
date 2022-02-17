@@ -78,7 +78,7 @@ router.get('/meat', (req, res) => {
 router.get('/pantry', (req, res) => {
   Product.findAll({
     where: {department_id: 4},
-    raw: true
+    raw: true,  
 })
 .then((dbDepartmentData) => {
     if(!dbDepartmentData) {
