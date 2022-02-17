@@ -40,7 +40,6 @@ async function loginFormHandler(e) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        // Commenting out if we want to modfy where user goes once logged in
         if (response.ok) {
             document.location.replace('/');
         } else {

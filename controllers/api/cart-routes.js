@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Cart } = require('../../models');
+const autho = require('../../utils/auth');
 
 //view all items in cart
 router.get('/:user_id', (req, res) => {
@@ -38,7 +39,7 @@ router.get('/:user_id/:id', (req, res) => {
 });
 
 //add item to cart
-router.post('/:user_id', (req, res) => {
+router.post('/:user_id', autho, (req, res) => {
         Cart.create(req.body, {
             where: {
                 user_id: req.params.user_id,
@@ -54,7 +55,7 @@ router.post('/:user_id', (req, res) => {
     });
 
 //modify number of items in cart
-router.put('/:user_id/:id', (req, res) => {
+router.put('/:user_id/:id', autho, (req, res) => {
     Cart.update(req.body, {
         where: {
             user_id: req.params.user_id,
@@ -72,7 +73,7 @@ router.put('/:user_id/:id', (req, res) => {
 });
 
 //delete item from cart
-router.delete('/:user_id/:id', (req, res) => {
+router.delete('/:user_id/:id', autho, (req, res) => {
     Cart.destroy({
         where: {
             user_id: req.params.user_id,
