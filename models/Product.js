@@ -20,7 +20,7 @@ Product.init(
             allowNull: false
         },
         price: {
-            type:DataTypes.DECIMAL(4,2),
+            type:DataTypes.STRING,
             allowNull: false
         },
         img: {
