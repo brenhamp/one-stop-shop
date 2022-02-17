@@ -17,15 +17,17 @@ router.get('/login', (req, res) => {
 
 router.get('/produce', (req, res) => {
   Product.findAll({
-    where: {department_id: 1}
+    where: {department_id: 1},
+    raw: true
 })
 .then((dbDepartmentData) => {
     if(!dbDepartmentData) {
         res.status(404).json({ message: "No department found with this ID"});
         return;
     }
+    JSON.stringify(dbDepartmentData);
     console.log(dbDepartmentData);
-    res.render('produce');
+    res.render('produce', {dbDepartmentData});
 })
 .catch((err) => {
     console.log(err);
@@ -34,19 +36,83 @@ router.get('/produce', (req, res) => {
 });
 
 router.get('/dairy', (req, res) => {
-  res.render('dairy');
+  Product.findAll({
+    where: {department_id: 2},
+    raw: true
+})
+.then((dbDepartmentData) => {
+    if(!dbDepartmentData) {
+        res.status(404).json({ message: "No department found with this ID"});
+        return;
+    }
+    JSON.stringify(dbDepartmentData);
+    console.log(dbDepartmentData);
+    res.render('produce', {dbDepartmentData});
+})
+.catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.get('/meat', (req, res) => {
-  res.render('meat');
+  Product.findAll({
+    where: {department_id: 3},
+    raw: true
+})
+.then((dbDepartmentData) => {
+    if(!dbDepartmentData) {
+        res.status(404).json({ message: "No department found with this ID"});
+        return;
+    }
+    JSON.stringify(dbDepartmentData);
+    console.log(dbDepartmentData);
+    res.render('produce', {dbDepartmentData});
+})
+.catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.get('/pantry', (req, res) => {
-  res.render('pantry');
+  Product.findAll({
+    where: {department_id: 4},
+    raw: true
+})
+.then((dbDepartmentData) => {
+    if(!dbDepartmentData) {
+        res.status(404).json({ message: "No department found with this ID"});
+        return;
+    }
+    JSON.stringify(dbDepartmentData);
+    console.log(dbDepartmentData);
+    res.render('produce', {dbDepartmentData});
+})
+.catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.get('/essentials', (req, res) => {
-  res.render('essentials');
+  Product.findAll({
+    where: {department_id: 5},
+    raw: true
+})
+.then((dbDepartmentData) => {
+    if(!dbDepartmentData) {
+        res.status(404).json({ message: "No department found with this ID"});
+        return;
+    }
+    JSON.stringify(dbDepartmentData);
+    console.log(dbDepartmentData);
+    res.render('produce', {dbDepartmentData});
+})
+.catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 module.exports = router;

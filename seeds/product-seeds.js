@@ -6,7 +6,7 @@ const productData = [
         product_id: 1,
         product_description: 'Bunch of 6 ripe bananas',
         price: 3.99,
-        img: '../public/banana-bunch.jpg',
+        img: './images/banana-bunch.jpg',
         department_id: 1
     },
     {
@@ -14,7 +14,7 @@ const productData = [
         product_id: 2,
         product_description: 'Bag of 6 large avocados',
         price: 4.99,
-        img: '../public/avocado.jpg',
+        img: './images/avocado.jpg',
         department_id: 1
     },
     {
@@ -22,14 +22,14 @@ const productData = [
         product_id: 3,
         product_description: 'Bulk large Russet potatoes',
         price: 2.59,
-        img: '../public/russet-potatoes.jpg',
+        img: './images/russet-potatoes.jpg',
         department_id: 1
     },
     {
         product_name: 'Cabbage',
         product_id: 4,
         product_description: 'Head of green cabbage',
-        img: '../public/cabbage.jpg',
+        img: './images/cabbage.jpg',
         price: 1.99,
         department_id: 1
     },
@@ -37,7 +37,7 @@ const productData = [
         product_name: 'Whole Milk',
         product_id: 5,
         product_description: 'Gallon of whole milk',
-        img: '../public/milk.jpg',
+        img: './images/milk.jpg',
         price: 1.99,
         department_id: 2
     },
@@ -45,7 +45,7 @@ const productData = [
         product_name: 'Butter',
         product_id: 6,
         product_description: 'Stick of salted butter',
-        img: '../public/butter.jpg',
+        img: './images/butter.jpg',
         price: 1.59,
         department_id: 2
     },
@@ -53,7 +53,7 @@ const productData = [
         product_name: 'Eggs',
         product_id: 7,
         product_description: '1 dozen Grade-A large eggs',
-        img: '../public/egg-carton.jpeg',
+        img: './images/egg-carton.jpeg',
         price: 2.59,
         department_id: 2
     },
@@ -61,7 +61,7 @@ const productData = [
         product_name: 'Cheddar Cheese',
         product_id: 8,
         product_description: 'Block of sharp Cheddar cheese',
-        img: '../public/cheddar-cheese.jpg',
+        img: './images/cheddar-cheese.jpg',
         price: 3.59,
         department_id: 2
     },
@@ -69,7 +69,7 @@ const productData = [
         product_name: 'Ground Beef',
         product_id: 9,
         product_description: '1 lb. lean ground beef',
-        img: '../public/ground-beef.jpg',
+        img: './images/ground-beef.jpg',
         price: 7.99,
         department_id: 3
     },
@@ -77,7 +77,7 @@ const productData = [
         product_name: 'Chicken Breasts',
         product_id: 10,
         product_description: 'Boneless skinless chicken breasts',
-        img: '../public/chicken.jpg',
+        img: './images/chicken.jpg',
         price: 6.99,
         department_id: 3
     },
@@ -85,7 +85,7 @@ const productData = [
         product_name: 'Sockeye Salmon',
         product_id: 11,
         product_description: 'Sockeye salmon fillets, fresh-caught',
-        img: '../public/sockeye-salmon.jpg',
+        img: './images/sockeye-salmon.jpg',
         price: 12.99,
         department_id: 3
     },
@@ -93,7 +93,7 @@ const productData = [
         product_name: 'Pork Chops',
         product_id: 12,
         product_description: 'Bone-in thick pork chops',
-        img: '../public/pork-chop.jpg',
+        img: './images/pork-chop.jpg',
         price: 5.59,
         department_id: 3
     },
@@ -101,7 +101,7 @@ const productData = [
         product_name: 'Canned Tuna',
         product_id: 13,
         product_description: 'Albacore tuna in water, 5 oz.',
-        img: '../public/tuna.jpg',
+        img: './images/tuna.jpg',
         price: 0.99,
         department_id: 4
     },
@@ -109,7 +109,7 @@ const productData = [
         product_name: 'Potato Chips',
         product_id: 14,
         product_description: 'Salted kettle-cooked potato chips',
-        img: '../public/kettle-chips.jpg',
+        img: './images/kettle-chips.jpg',
         price: 1.59,
         department_id: 4
     },
@@ -117,7 +117,7 @@ const productData = [
         product_name: 'Corn Flakes',
         product_id: 15,
         product_description: 'Frosted corn flake cereal',
-        img: '../public/frosted-flakes.jpg',
+        img: './images/frosted-flakes.jpg',
         price: 3.59,
         department_id: 4
     },
@@ -125,7 +125,7 @@ const productData = [
         product_name: 'Peanut Butter',
         product_id: 16,
         product_description: 'Jar of smooth peanut butter',
-        img: '../public/peanut-butter.jpg',
+        img: './images/peanut-butter.jpg',
         price: 3.59,
         department_id: 4
     },
@@ -133,7 +133,7 @@ const productData = [
         product_name: 'Toilet Paper',
         product_id: 17,
         product_description: '2-ply toilet paper rolls, pack of 6',
-        img: '../public/toilet-paper.jpg',
+        img: './images/toilet-paper.jpg',
         price: 3.99,
         department_id: 5
     },
@@ -141,7 +141,7 @@ const productData = [
         product_name: 'Laundry Detergent',
         product_id: 18,
         product_description: 'Gallon of lavender-scented detergent',
-        img: '../public/laundry-detergent.jpg',
+        img: './images/laundry-detergent.jpg',
         price: 6.99,
         department_id: 5
     },
@@ -149,7 +149,7 @@ const productData = [
         product_name: 'Aluminum Foil',
         product_id: 19,
         product_description: 'Roll of aluminum foil, 25 ft',
-        img: '../public/foil.jpg',
+        img: './images/foil.jpg',
         price: 3.59,
         department_id: 5
     },
@@ -157,7 +157,7 @@ const productData = [
         product_name: 'Trash Bags',
         product_id: 20,
         product_description: 'Heavy-duty gallon trash bags, 30 ct',
-        img: '../public/trash-bags.jpg',
+        img: './images/trash-bags.jpg',
         price: 2.59,
         department_id: 5
     },
